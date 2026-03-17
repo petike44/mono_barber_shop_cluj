@@ -101,7 +101,8 @@ img {
 }
 
 .btn,
-.btn-outline {
+.btn-outline,
+.btn-hero-noir {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -135,34 +136,99 @@ img {
   color: #080808;
 }
 
-.hero {
-  min-height: calc(100svh - 74px);
-  display: grid;
-  align-items: end;
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.4)),
-    url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1400&q=80');
-  background-position: center;
-  background-size: cover;
+/* =========================================
+   NEW GRITTY NOIR HERO SECTION CSS
+   Replaces your old .hero section CSS
+   ========================================= */
+.hero-grid {
+  min-height: 90svh; /* Occupies most of the viewport height */
+  position: relative;
+  overflow: hidden;
+  display: flex; /* Switched to flex for better stacking behavior */
+  flex-direction: column;
 }
 
-.hero-content {
-  padding-bottom: 4rem;
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the section */
+  z-index: 1; /* Puts image at bottom */
+  filter: grayscale(1) contrast(1.1); /* Increases noir grit */
 }
 
-.hero h1 {
+.hero-content-noir {
+  position: relative;
+  z-index: 5; /* Puts content above image */
+  height: 100%;
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-bottom: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Puts text at bottom left on mobile */
+  align-items: flex-start;
+  flex: 1; /* Allows flex-grow to occupy space */
+}
+
+/* Optional Overlay for Gritty Text Contrast */
+.hero-grid::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2; /* Between content and image */
+  background: linear-gradient(
+    to bottom,
+    rgba(6,6,6, 0.4) 0%, /* Darker top for nav */
+    rgba(6,6,6, 0.1) 40%, /* Clear middle for main visual */
+    rgba(6,6,6, 0.9) 100% /* Solid dark bottom for text */
+  );
+}
+
+.hero-title-noir {
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
-  line-height: 1.1;
-  font-size: clamp(2rem, 7vw, 4rem);
-  max-width: 16ch;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  font-size: clamp(2.4rem, 8vw, 5rem);
+  color: #ffffff; /* Bright white title */
+  margin-bottom: 1.2rem;
 }
 
-.hero p {
-  margin-top: 1rem;
-  color: #e7e7e7;
-  max-width: 58ch;
+/* Specific styling for 'MONO' within the header */
+.mono-logo {
+  font-size: clamp(2.6rem, 8.5vw, 5.2rem); /* Slightly larger */
+  letter-spacing: 0.08em;
+  color: #bdbdbd; /* Soft muted grey for contrast */
 }
+
+.hero-subtitle-noir {
+  color: #eaeaea;
+  max-width: 50ch;
+  margin-bottom: 2rem;
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+}
+
+/* New visually catching Book button, strictly B&W */
+.btn-hero-noir {
+  background-color: transparent;
+  color: #eaeaea;
+  border: 1px solid #eaeaea; /* Light grey border */
+  border-radius: 9999px; /* Rounded button */
+  letter-spacing: 0.08em;
+  font-family: 'Oswald', sans-serif; /* Modern modern font */
+}
+
+.btn-hero-noir:hover {
+  background-color: #eaeaea; /* Inverts to light on hover */
+  color: #060606; /* Dark text on hover */
+  border-color: transparent;
+}
+
+/* ========================================= */
 
 .grid-2 {
   display: grid;
@@ -327,11 +393,50 @@ img {
   z-index: 1000;
 }
 
+/* =========================================
+   MEDIA QUERIES (Updated for new hero)
+   ========================================= */
+
 @media (min-width: 760px) {
   .nav {
     display: flex;
   }
 
+  /* Split layout for the hero section on large screens */
+  .hero-grid {
+    flex-direction: row-reverse; /* Put image right, content left */
+    align-items: stretch;
+    min-height: calc(100svh - 74px); /* Full height minus header */
+  }
+
+  .hero-image {
+    width: 50%; /* Image uses the right half */
+    position: relative; /* Removes absolute positioning */
+  }
+
+  .hero-grid::after {
+    /* Overlay changes on desktop to just darken the header area */
+    background: linear-gradient(
+      to bottom,
+      rgba(6,6,6, 0.3) 0%,
+      transparent 15%
+    );
+  }
+
+  .hero-content-noir {
+    width: 50%; /* Content uses the left half */
+    margin-left: 0;
+    margin-right: auto;
+    justify-content: center; /* Puts text vertically centered */
+    align-items: flex-start;
+    padding-left: clamp(2rem, 8vw, 12rem); /* Large left margin on desktop */
+  }
+
+  .hero-subtitle-noir {
+    max-width: 42ch; /* Tighter text column on large screen */
+  }
+
+  /* Unchanged media queries */
   .card-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -362,9 +467,5 @@ img {
   .header-wrap .btn {
     padding-inline: 0.9rem;
     font-size: 0.82rem;
-  }
-
-  .hero-content {
-    padding-bottom: 3.2rem;
   }
 }
