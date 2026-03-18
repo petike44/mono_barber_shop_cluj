@@ -45,7 +45,32 @@ img {
 }
 
 .section {
-  padding: 4.5rem 0;
+  padding: 1.5rem 0.75rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin: 3rem 4rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#poveste {
+  scroll-margin-top: 90px; /* Adjust scroll position to account for sticky header */
+}
+
+#servicii {
+  scroll-margin-top: 90px;
+}
+
+#echipa {
+  scroll-margin-top: 90px;
+}
+
+#recenzii {
+  scroll-margin-top: 90px;
+}
+
+#contact {
+  scroll-margin-top: 90px;
 }
 
 .section-title {
@@ -141,37 +166,48 @@ img {
    Replaces your old .hero section CSS
    ========================================= */
 .hero-grid {
-  min-height: 90svh; /* Occupies most of the viewport height */
+  min-height: 70svh; /* Reduced height to squeeze content */
   position: relative;
   overflow: hidden;
   display: flex; /* Switched to flex for better stacking behavior */
   flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center horizontally */
+  margin-bottom: -2rem; /* Reduce space to next section */
 }
 
 .hero-image {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures the image covers the section */
-  z-index: 1; /* Puts image at bottom */
-  filter: grayscale(1) contrast(1.1); /* Increases noir grit */
+  top: 2rem;      /* distance from top */
+  right: 2rem;    /* distance from right */
+  width: 200px;   /* adjust as needed */
+  height: auto;   /* maintains aspect ratio */
+  object-fit: contain; /* ensures full image fits without cropping */
+  border-radius: 0.5rem;
+  z-index: 5;
 }
 
 .hero-content-noir {
   position: relative;
   z-index: 5; /* Puts content above image */
-  height: 100%;
   width: 100%;
   max-width: var(--container);
   margin-inline: auto;
-  padding-bottom: 3.5rem;
+  padding: 2rem; /* Reduced padding for tighter squeeze */
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* Puts text at bottom left on mobile */
-  align-items: flex-start;
-  flex: 1; /* Allows flex-grow to occupy space */
+  justify-content: center; /* Center vertically within container */
+  align-items: flex-start; /* Align content to the left */
+  text-align: left; /* Left align text */
+}
+
+.hero-image {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
+  height: auto;
+  border-radius: 0.5rem;
 }
 
 /* Optional Overlay for Gritty Text Contrast */
@@ -195,14 +231,30 @@ img {
   line-height: 1;
   font-size: clamp(2.4rem, 8vw, 5rem);
   color: #ffffff; /* Bright white title */
-  margin-bottom: 1.2rem;
+  margin-bottom: 2.5rem; /* Increased space to prevent overlap on hover */
 }
 
 /* Specific styling for 'MONO' within the header */
 .mono-logo {
-  font-size: clamp(2.6rem, 8.5vw, 5.2rem); /* Slightly larger */
+  font-size: clamp(3rem, 9vw, 6rem); /* Larger for stronger brand emphasis */
   letter-spacing: 0.08em;
   color: #bdbdbd; /* Soft muted grey for contrast */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  cursor: pointer; /* Indicate it's interactive */
+}
+
+.mono-logo:hover {
+  transform: scale(1.1); /* Grow on hover without layout shift */
+  color: #ffffff; /* Brighter for emphasis */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Subtle glow */
+}
+
+/* Smaller supporting tagline lines */
+.hero-tagline {
+  display: inline-block;
+  font-size: 0.55em; /* Make wording smaller than MONO */
+  letter-spacing: 0.15em;
+  opacity: 0.92;
 }
 
 .hero-subtitle-noir {
@@ -226,6 +278,20 @@ img {
   background-color: #eaeaea; /* Inverts to light on hover */
   color: #060606; /* Dark text on hover */
   border-color: transparent;
+}
+
+/* Decorative elements below the button */
+.hero-decor {
+  margin-top: 1.5rem;
+  font-size: 1.1rem; /* Grown in size */
+  color: #bdbdbd;
+  opacity: 0.8;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.hero-decor div {
+  margin-bottom: 0.5rem; /* Space between rows */
 }
 
 /* ========================================= */
@@ -291,6 +357,57 @@ img {
   gap: 1rem;
 }
 
+.review-form {
+  margin-top: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+.review-form h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.review-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.review-form input,
+.review-form textarea {
+  background: var(--surface-2);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 0.75rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.review-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.review-form button {
+  background: var(--accent);
+  color: #080808;
+  border: 1px solid var(--accent);
+  border-radius: 5px;
+  padding: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.review-form button:hover {
+  background: #ffffff;
+}
+
 .review {
   border-left: 3px solid var(--accent);
   background: var(--surface);
@@ -307,17 +424,40 @@ img {
   display: inline-block;
 }
 
-.map-wrap {
+.contact-info {
   margin-top: 1.7rem;
-  border-radius: var(--radius);
-  overflow: hidden;
-  border: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
 }
 
-.map-wrap iframe {
-  width: 100%;
-  min-height: 260px;
-  border: 0;
+.contact-item {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.contact-item h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.contact-item p {
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.contact-item a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
 }
 
 .site-footer {
@@ -405,31 +545,22 @@ img {
   /* Split layout for the hero section on large screens */
   .hero-grid {
     flex-direction: row-reverse; /* Put image right, content left */
-    align-items: stretch;
-    min-height: calc(100svh - 74px); /* Full height minus header */
+    align-items: center; /* Center vertically */
+    min-height: calc(80svh - 74px); /* Reduced height */
   }
 
   .hero-image {
-    width: 50%; /* Image uses the right half */
-    position: relative; /* Removes absolute positioning */
-  }
-
-  .hero-grid::after {
-    /* Overlay changes on desktop to just darken the header area */
-    background: linear-gradient(
-      to bottom,
-      rgba(6,6,6, 0.3) 0%,
-      transparent 15%
-    );
+    width: 150px; /* Larger on desktop */
   }
 
   .hero-content-noir {
-    width: 50%; /* Content uses the left half */
+    width: 55%; /* Slightly larger to bring closer */
     margin-left: 0;
     margin-right: auto;
-    justify-content: center; /* Puts text vertically centered */
-    align-items: flex-start;
-    padding-left: clamp(2rem, 8vw, 12rem); /* Large left margin on desktop */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    padding-left: clamp(1rem, 4vw, 4rem); /* Reduced left padding to bring closer */
+    text-align: left; /* Keep left align on desktop */
   }
 
   .hero-subtitle-noir {
@@ -467,5 +598,14 @@ img {
   .header-wrap .btn {
     padding-inline: 0.9rem;
     font-size: 0.82rem;
+  }
+
+  .hero-image {
+    display: none; /* Hide image on mobile to avoid overlap */
+  }
+}
+@media (max-width: 768px) {
+  .hero-image {
+    width: 120px;  /* smaller on mobile */
   }
 }
