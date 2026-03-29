@@ -797,8 +797,7 @@ img {
 
 @media (max-width: 767px) {
   .header-wrap .btn {
-    padding: 0.55rem 1rem;
-    font-size: 0.78rem;
+    display: none;
   }
 
   .hero {
