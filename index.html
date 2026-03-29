@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ro">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mono Barber Shop | Frizerie Cluj-Napoca</title>
-  <meta name="description" content="Mono Barber Shop este frizerie în Cluj-Napoca pentru tunsori precise, tuns barbă și styling masculin în centrul orașului.">
+  <meta name="description" content="Mono Barber Shop este frizerie in Cluj-Napoca pentru tunsori precise, tuns barba si styling masculin in centrul orasului.">
   <meta name="keywords" content="Frizerie Cluj-Napoca, Tuns Barba Cluj, Mono Barber Shop, Styling Masculin Centru Cluj">
-  <meta name="theme-color" content="#060606">
-  <link rel="stylesheet" href="styles.css?v=2">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="stylesheet" href="styles.css?v=3">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -30,195 +30,238 @@
   </script>
 </head>
 <body>
+
+  <!-- Header -->
   <header class="site-header">
     <div class="container header-wrap">
       <a href="#top" class="logo" aria-label="Mono Barber Shop">MONO</a>
-      <nav class="nav" aria-label="Navigație principală">
+      <nav class="nav" aria-label="Navigatie principala">
         <a href="#poveste">Despre Noi</a>
         <a href="#servicii">Servicii</a>
         <a href="#echipa">Echipa</a>
         <a href="#recenzii">Recenzii</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a href="#contact" class="btn">Programare Online</a>
+      <button class="menu-toggle" aria-label="Meniu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <a href="#contact" class="btn">Programare</a>
     </div>
   </header>
 
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" aria-label="Meniu mobil">
+    <a href="#poveste">Despre Noi</a>
+    <a href="#servicii">Servicii</a>
+    <a href="#echipa">Echipa</a>
+    <a href="#recenzii">Recenzii</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
   <main id="top">
-    <section class="hero hero-grid">
-      <img class="hero-bg-image" src="pictures/barber_shop.png" alt="Barber at work" loading="eager" decoding="async">
-      <div class="container hero-content-noir">
-        <h1 class="hero-title-noir">
-          <span class="mono-logo">MONO</span><br>
-          <span class="hero-tagline">
-            PRECISION.<br>
-            STYLE.<br>
-            CHARACTER.
-          </span>
+
+    <!-- Hero -->
+    <section class="hero">
+      <img class="hero-bg-image" src="pictures/barber_shop.png" alt="Interior Mono Barber Shop" loading="eager" decoding="async">
+      <div class="hero-content">
+        <span class="hero-label">Frizerie Cluj-Napoca</span>
+        <h1 class="hero-title">
+          MONO
+          <span>Precision &middot; Style &middot; Character</span>
         </h1>
-        <p class="hero-subtitle-noir">Tuns Barbă Cluj și styling masculin centru Cluj într-un spațiu unde fiecare detaliu este intenționat.</p>
-        <a href="#contact" class="btn-hero-noir">BOOK AN APPOINTMENT</a>
-        <div class="hero-decor">
-          <div><a href="https://www.google.com/maps/search/?api=1&query=Strada+Memorandumului+12,+Cluj-Napoca" target="_blank" rel="noopener">📍 Strada Memorandumului 12, Cluj-Napoca</a></div>
-          <div>🕒 Luni - Sâmbătă: 10:00 - 20:00</div>
+        <p class="hero-subtitle">Tuns, barba si styling masculin intr-un spatiu unde fiecare detaliu este intentionat.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-hero">Programare</a>
+          <a href="#servicii" class="btn-outline">Servicii</a>
+        </div>
+        <div class="hero-meta">
+          <a href="https://www.google.com/maps/search/?api=1&query=Strada+Memorandumului+12,+Cluj-Napoca" target="_blank" rel="noopener">&#x1F4CD; Strada Memorandumului 12</a>
+          <span>&#128339; Luni &ndash; Sambata: 10:00 &ndash; 20:00</span>
         </div>
       </div>
     </section>
 
+    <!-- About -->
     <section id="poveste" class="section">
       <div class="container grid-2">
         <div>
-          <h2 class="section-title">Povestea Noastră — Styling Masculin în inima Clujului</h2>
-          <p class="section-subtitle">La Mono credem în puterea simplității și perfecțiunii: un lucru făcut impecabil. Identitatea noastră se bazează pe grooming-ul masculin și pe tunsori realizate cu disciplină, ritm și respect pentru personalitatea fiecărui client.</p>
+          <h2 class="section-title">Povestea Noastra</h2>
+          <p class="section-subtitle">La Mono credem in puterea simplitatii: un lucru facut impecabil. Identitatea noastra se bazeaza pe grooming-ul masculin si pe tunsori realizate cu disciplina, ritm si respect pentru fiecare client.</p>
         </div>
         <div class="card">
-          <h3>Locație si Prețuri accesibile</h3>
-          <p>Suntem poziționați în centrul orașului, aproape de ritmul urban. Intră pentru o pauză scurtă, ieși cu un look clar, modern și potrivit stilului tău de viață— totul la prețuri corecte și accesibile.</p>
+          <div class="feature-num">01</div>
+          <h3>Locatie Centrala</h3>
+          <p>Suntem pozitionati in centrul orasului, aproape de ritmul urban. Intra pentru o pauza scurta, iesi cu un look clar si modern &mdash; totul la preturi corecte si accesibile.</p>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <!-- Why Us -->
+    <section class="section section-dark">
       <div class="container grid-2">
         <div>
-          <h2 class="section-title">De Ce Noi — Tuns Barba Cluj Cu Precizie</h2>
-          <p class="section-subtitle">Folosim produse premium și metode profesionale, alături de o atenție la detalii care face fiecare tunsoare Mono unică. Rezultatul? Un look curat, echilibrat și durabil… și, da, la Mono nu e deloc monoton!</p>
+          <h2 class="section-title">De Ce Noi</h2>
+          <p class="section-subtitle">Folosim produse premium si metode profesionale, alaturi de o atentie la detalii care face fiecare tunsoare Mono unica. Rezultatul? Un look curat, echilibrat si durabil.</p>
         </div>
         <div class="card">
+          <div class="feature-num">02</div>
           <h3>The Craft</h3>
-          <p>Oferim consultanță rapidă înainte de fiecare serviciu, contururi perfect simetrice și textură controlată pentru un rezultat care arată impecabil chiar și după săptămâni.</p>
+          <p>Oferim consultanta rapida inainte de fiecare serviciu, contururi perfect simetrice si textura controlata pentru un rezultat impecabil chiar si dupa saptamani.</p>
         </div>
       </div>
     </section>
 
+    <!-- Services -->
     <section id="servicii" class="section">
       <div class="container">
-        <h2 class="section-title">Servicii Esențiale Mono Barber Shop</h2>
-        <p class="section-subtitle">Tunsori, bărbierit și styling pentru un look complet, masculin și coerent.</p>
+        <h2 class="section-title">Servicii</h2>
+        <p class="section-subtitle">Tunsori, barbierit si styling pentru un look complet, masculin si coerent.</p>
         <div class="card-grid">
           <article class="card">
+            <div class="feature-num">01</div>
             <h3>Tuns Signature</h3>
-            <p>Consultanță de formă, fade sau linie clasică, plus styling final adaptat tipului de păr.</p>
+            <p>Consultanta de forma, fade sau linie clasica, plus styling final adaptat tipului de par.</p>
           </article>
           <article class="card">
-            <h3>Aranjat Barbă</h3>
-            <p>Contur precis, echilibrare volum și finisare premium pentru o barbă definită.</p>
+            <div class="feature-num">02</div>
+            <h3>Aranjat Barba</h3>
+            <p>Contur precis, echilibrare volum si finisare premium pentru o barba definita.</p>
           </article>
           <article class="card">
+            <div class="feature-num">03</div>
             <h3>Pachet Full Mono</h3>
-            <p>Tuns + barbă + ritual prosop fierbinte pentru experiență completă de grooming.</p>
+            <p>Tuns + barba + ritual prosop fierbinte pentru experienta completa de grooming.</p>
           </article>
         </div>
-        <div style="margin-top: 1.4rem;">
-          <a class="btn-outline" href="prices.html">Vezi toate serviciile</a>
+        <div style="margin-top: 2rem;">
+          <a class="btn-outline" href="prices.html">Vezi toate serviciile &rarr;</a>
         </div>
       </div>
     </section>
 
-    <section id="echipa" class="section">
+    <!-- Team -->
+    <section id="echipa" class="section section-dark">
       <div class="container">
-        <h2 class="section-title">Echipa Noastră</h2>
-        <p class="section-subtitle">Cunoaște echipa noastră de profesioniști la Mono Barber Shop Cluj.</p>
-
-        <div class="gallery-grid" aria-label="Echipa Noastră">
+        <h2 class="section-title">Echipa</h2>
+        <p class="section-subtitle">Cunoaste echipa noastra de profesionisti.</p>
+        <div class="gallery-grid" aria-label="Echipa Noastra">
           <figure class="gallery-item">
-            <img src="pictures/barber1.png" alt="Fresh Fade 1">
-            <span>Alex “The Edge”- </span>
+            <img src="pictures/barber1.png" alt="Alex - barber la Mono">
+            <span>Alex &ldquo;The Edge&rdquo;</span>
           </figure>
           <figure class="gallery-item">
-            <img src="pictures/barber2.png" alt="Fresh Fade 2">
-            <span>Luca “Fade Master”</span>
+            <img src="pictures/barber2.png" alt="Luca - barber la Mono">
+            <span>Luca &ldquo;Fade Master&rdquo;</span>
           </figure>
           <figure class="gallery-item">
-            <img src="pictures/barber3.png" alt="Fresh Fade 3">
-            <span>Márk “Clipper King”</span>
+            <img src="pictures/barber3.png" alt="Mark - barber la Mono">
+            <span>M&aacute;rk &ldquo;Clipper King&rdquo;</span>
           </figure>
           <figure class="gallery-item">
-            <img src="pictures/barber4.png" alt="Fresh Fade 4">
-            <span>Andrei “The Artisan”</span>
+            <img src="pictures/barber4.png" alt="Andrei - barber la Mono">
+            <span>Andrei &ldquo;The Artisan&rdquo;</span>
           </figure>
         </div>
-
       </div>
     </section>
 
+    <!-- Reviews -->
     <section id="recenzii" class="section">
       <div class="container">
         <h2 class="section-title">Recenzii</h2>
-        <p class="section-subtitle">Ce spun clienții noștri despre experiența la Mono Barber Shop.</p>
-
+        <p class="section-subtitle">Ce spun clientii nostri despre experienta la Mono.</p>
         <div class="reviews">
           <article class="review">
-            <p>„Super frizerie! Tunsoarea a ieșit exact cum voiam, iar atmosfera e foarte relaxantă. O să revin cu siguranță.”</p>
-            <strong>— Alex M.</strong>
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>&bdquo;Super frizerie! Tunsoarea a iesit exact cum voiam, iar atmosfera e foarte relaxanta. O sa revin cu siguranta.&rdquo;</p>
+            <strong>Alex M.</strong>
           </article>
           <article class="review">
-            <p>„Personalul știe ce face și se vede că le pasă de detalii. M-am simțit foarte confortabil și plec întotdeauna mulțumit.”</p>
-            <strong>— Radu T.</strong>
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>&bdquo;Personalul stie ce face si se vede ca le pasa de detalii. M-am simtit foarte confortabil si plec intotdeauna multumit.&rdquo;</p>
+            <strong>Radu T.</strong>
           </article>
           <article class="review">
-            <p>„Mi-a plăcut foarte mult vibe-ul locului și felul în care te tratează. Programarea rapidă, servicii premium, rezultat mereu consistent.”</p>
-            <strong>— Krisztián B.</strong>
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>&bdquo;Mi-a placut foarte mult vibe-ul locului si felul in care te trateaza. Programarea rapida, servicii premium, rezultat mereu consistent.&rdquo;</p>
+            <strong>Kriszti&aacute;n B.</strong>
           </article>
         </div>
 
         <div class="review-form">
-          <h3>Recenzii Clienți</h3>
+          <h3>Lasa o Recenzie</h3>
           <form action="#" method="post">
-            <input type="text" name="name" placeholder="Numele tău" required>
-            <input type="email" name="email" placeholder="Email-ul tău" required>
+            <input type="text" name="name" placeholder="Numele tau" required>
+            <input type="email" name="email" placeholder="Email-ul tau" required>
             <textarea name="message" placeholder="Recenzia ta" required></textarea>
-            <button type="submit">Trimite Recenzia</button>
+            <button type="submit">Trimite</button>
           </form>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section">
+    <!-- Contact -->
+    <section id="contact" class="section section-dark">
       <div class="container">
-        <h2 class="section-title">Contact Mono Barber Shop Cluj</h2>
-        <p class="section-subtitle">Rezervă simplu prin telefon sau WhatsApp și te așteptăm în centrul Clujului.</p>
+        <h2 class="section-title">Contact</h2>
+        <p class="section-subtitle">Rezerva simplu prin telefon sau WhatsApp.</p>
         <div class="contact-info">
           <div class="contact-item">
-            <h3>📞 Call Us</h3>
-            <p>+40 747 123 456</p>
+            <span class="contact-icon">&#128222;</span>
+            <h3>Telefon</h3>
+            <p><a href="tel:+40747123456">+40 747 123 456</a></p>
           </div>
           <div class="contact-item">
-            <h3>💬 WhatsApp</h3>
-            <p><a href="https://wa.me/40747123456" target="_blank">Message us</a></p>
+            <span class="contact-icon">&#128172;</span>
+            <h3>WhatsApp</h3>
+            <p><a href="https://wa.me/40747123456" target="_blank" rel="noopener">Trimite mesaj</a></p>
           </div>
           <div class="contact-item">
-            <h3>📍 Visit Us</h3>
-            <p><a href="https://www.google.com/maps/search/?api=1&query=Strada+Memorandumului+12,+Cluj-Napoca" target="_blank" rel="noopener">Strada Memorandumului 12, Cluj-Napoca</a></p>
+            <span class="contact-icon">&#128205;</span>
+            <h3>Adresa</h3>
+            <p><a href="https://www.google.com/maps/search/?api=1&query=Strada+Memorandumului+12,+Cluj-Napoca" target="_blank" rel="noopener">Str. Memorandumului 12</a></p>
           </div>
           <div class="contact-item">
-            <h3>🕒 Hours</h3>
-            <p>Luni - Sâmbătă: 10:00 - 20:00</p>
+            <span class="contact-icon">&#128339;</span>
+            <h3>Program</h3>
+            <p>Luni &ndash; Sambata: 10 &ndash; 20</p>
           </div>
         </div>
       </div>
     </section>
+
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <p class="footer-title">Contact Direct</p>
-        <a class="footer-link" href="tel:+40747123456">Telefon: +40 747 123 456</a><br>
-        <a class="footer-link" href="https://wa.me/40747123456" target="_blank" rel="noopener">WhatsApp Programări</a>
-      </div>
-      <div>
-        <p class="footer-title">Social</p>
-        <a class="footer-link" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram Mono Barber">Instagram</a><br>
-        <a class="footer-link" href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook Mono Barber">Facebook</a>
-      </div>
-      <div>
-        <p class="footer-title">Adresă</p>
-        <p class="footer-text"><a href="https://www.google.com/maps/search/?api=1&query=Strada+Memorandumului+12,+Cluj-Napoca" target="_blank" rel="noopener">Strada Memorandumului 12, Cluj-Napoca</a></p>
-        <p class="footer-text">Luni - Sâmbătă: 10:00 - 20:00</p>
-      </div>
+    <div class="container">
+      <p class="footer-text">&copy; 2026 Mono Barber Shop Cluj. Toate drepturile rezervate.</p>
     </div>
   </footer>
+
   <script src="reviews.js"></script>
+  <script>
+    // Mobile menu toggle
+    const toggle = document.querySelector('.menu-toggle');
+    const mobileNav = document.querySelector('.mobile-nav');
+    if (toggle && mobileNav) {
+      toggle.addEventListener('click', () => {
+        toggle.classList.toggle('active');
+        mobileNav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', mobileNav.classList.contains('open'));
+        document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+      });
+      mobileNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          toggle.classList.remove('active');
+          mobileNav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      });
+    }
+  </script>
 </body>
 </html>

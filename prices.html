@@ -1,32 +1,47 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ro">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meniu Servicii | Mono Barber Shop Cluj</title>
-  <meta name="description" content="Meniu servicii Mono Barber Shop Cluj-Napoca: tuns, barbă, pachete combo și produse de grooming.">
+  <meta name="description" content="Meniu servicii Mono Barber Shop Cluj-Napoca: tuns, barba, pachete combo si produse de grooming.">
   <meta name="keywords" content="Frizerie Cluj-Napoca, Tuns Barba Cluj, Mono Barber Shop, Styling Masculin Centru Cluj">
-  <meta name="theme-color" content="#060606">
-  <link rel="stylesheet" href="styles.css?v=2">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
+
   <header class="site-header">
     <div class="container header-wrap">
       <a href="index.html" class="logo" aria-label="Mono Barber Shop">MONO</a>
-      <nav class="nav" aria-label="Navigație principală">
-        <a href="index.html#poveste">Povestea Noastră</a>
+      <nav class="nav" aria-label="Navigatie principala">
+        <a href="index.html#poveste">Despre Noi</a>
         <a href="index.html#servicii">Servicii</a>
         <a href="index.html#echipa">Echipa</a>
         <a href="index.html#contact">Contact</a>
       </nav>
-      <a href="#programare" class="btn">Programare Online</a>
+      <button class="menu-toggle" aria-label="Meniu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <a href="index.html#contact" class="btn">Programare</a>
     </div>
   </header>
 
+  <nav class="mobile-nav" aria-label="Meniu mobil">
+    <a href="index.html#poveste">Despre Noi</a>
+    <a href="index.html#servicii">Servicii</a>
+    <a href="index.html#echipa">Echipa</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
   <main>
-    <section class="section">
+    <section class="section" style="padding-top: 6rem;">
       <div class="container">
-        <h1 class="section-title">Meniu Servicii — Frizerie Cluj-Napoca</h1>
+        <h1 class="section-title">Meniu Servicii</h1>
+        <p class="section-subtitle">Toate serviciile si preturile noastre.</p>
+
         <div class="price-list">
           <article class="price-category">
             <h3>Tuns</h3>
@@ -36,35 +51,62 @@
           </article>
 
           <article class="price-category">
-            <h3>Barbă</h3>
-            <div class="price-row"><span>Aranjat Barbă</span><span>60 RON</span></div>
-            <div class="price-row"><span>Barbă + Prosop Fierbinte</span><span>75 RON</span></div>
+            <h3>Barba</h3>
+            <div class="price-row"><span>Aranjat Barba</span><span>60 RON</span></div>
+            <div class="price-row"><span>Barba + Prosop Fierbinte</span><span>75 RON</span></div>
             <div class="price-row"><span>Contur Rapid</span><span>40 RON</span></div>
           </article>
 
           <article class="price-category">
             <h3>Pachete Combo</h3>
-            <div class="price-row"><span>Full Mono (Tuns + Barbă)</span><span>140 RON</span></div>
+            <div class="price-row"><span>Full Mono (Tuns + Barba)</span><span>140 RON</span></div>
             <div class="price-row"><span>Mono Premium Ritual</span><span>170 RON</span></div>
-            <div class="price-row"><span>Tată + Fiu</span><span>150 RON</span></div>
+            <div class="price-row"><span>Tata + Fiu</span><span>150 RON</span></div>
           </article>
 
           <article class="price-category">
             <h3>Grooming Produse</h3>
-            <div class="price-row"><span>Pomadă Mată Mono</span><span>65 RON</span></div>
-            <div class="price-row"><span>Ulei Barbă Premium</span><span>55 RON</span></div>
+            <div class="price-row"><span>Pomada Mata Mono</span><span>65 RON</span></div>
+            <div class="price-row"><span>Ulei Barba Premium</span><span>55 RON</span></div>
             <div class="price-row"><span>Set Styling Masculin</span><span>120 RON</span></div>
           </article>
         </div>
 
-        <section id="programare" class="section" style="padding-bottom: 0;">
+        <div style="margin-top: 3rem; text-align: center;">
           <h2 class="section-title">Programare</h2>
-          <p class="section-subtitle">Sună la <a href="tel:+40747123456">+40 747 123 456</a> sau scrie-ne pe <a href="https://wa.me/40747123456" target="_blank" rel="noopener">WhatsApp</a>.</p>
-        </section>
+          <p class="section-subtitle" style="margin-inline: auto;">Suna la <a href="tel:+40747123456" style="color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.2);">+40 747 123 456</a> sau scrie-ne pe <a href="https://wa.me/40747123456" target="_blank" rel="noopener" style="color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.2);">WhatsApp</a>.</p>
+        </div>
       </div>
     </section>
   </main>
 
-  <a class="btn floating-book" href="#programare" aria-label="Programare rapidă">Programare</a>
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-text">&copy; 2026 Mono Barber Shop Cluj. Toate drepturile rezervate.</p>
+    </div>
+  </footer>
+
+  <a class="btn floating-book" href="index.html#contact" aria-label="Programare rapida">Programare</a>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const mobileNav = document.querySelector('.mobile-nav');
+    if (toggle && mobileNav) {
+      toggle.addEventListener('click', () => {
+        toggle.classList.toggle('active');
+        mobileNav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', mobileNav.classList.contains('open'));
+        document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+      });
+      mobileNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          toggle.classList.remove('active');
+          mobileNav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      });
+    }
+  </script>
 </body>
 </html>
